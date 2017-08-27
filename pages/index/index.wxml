@@ -1,0 +1,46 @@
+<view class="ta-container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="main">
+    <navigator url="/pages/albums/albums" class="explore">Explore</navigator>
+    <view wx:if="{{userInfo.albums.length}}" class="albums-container">
+      <view class="title">Albums {{userInfo.albums.length}}</view>
+      <view>
+        <navigator
+          wx:for="{{userInfo.albums}}"
+          wx:key="_id"
+          wx:for-item="album"
+          url="/pages/albums/index?id={{album._id}}"
+          hover-class="navigator-hover"
+          class="item ta-image {{index === 0 ? 'first' : ''}} {{album.loaded ? 'ta-loaded' : ''}}"
+        >
+          <image
+            src="{{'http://typha.samuraime.com:3000/static/images/demo' + (index % 3) + '.jpg'}}"
+            mode="aspectFill"
+            bindload="hideAlbumMask"
+            data-index="{{index}}"
+          />
+        </navigator>
+      </view>
+    </view>
+    <view wx:if="{{userInfo.photos.length}}" class="photos-container">
+      <view class="title">Photos {{userInfo.photos.length}}</view>
+      <view>
+        <view
+          wx:for="{{userInfo.photos}}"
+          wx:key="_id"
+          class="item ta-image {{index === 0 ? 'first' : ''}} {{item.loaded ? 'ta-loaded' : ''}}"
+        >
+          <image
+            src="{{'http://typha.samuraime.com:3000/static/images/demo' + (index % 3) + '.jpg'}}"
+            mode="aspectFill"
+            bindload="hidePhotoMask"
+            data-index="{{index}}"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+.ta-container {
+  height: 100%;
+  padding: 20rpx;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.main {
+  width: 100%;
+}
+
+.explore {
+  text-align: center;
+  margin: 100rpx 0;
+}
+.albums-container, .photos-container {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.albums-container .title, .photos-container .title {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.item {
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 15rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.item.first {
+  margin-left: 0;
+}
