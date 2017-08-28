@@ -17,7 +17,7 @@
           class="item ta-image {{index === 0 ? 'first' : ''}} {{album.loaded ? 'ta-loaded' : ''}}"
         >
           <image
-            src="{{'http://typha.samuraime.com:3000/static/images/demo' + (index % 3) + '.jpg'}}"
+            src="{{album.cover}}"
             mode="aspectFill"
             bindload="hideAlbumMask"
             data-index="{{index}}"
@@ -27,19 +27,19 @@
     </view>
     <view wx:if="{{userInfo.photos.length}}" class="photos-container">
       <view class="title">Photos {{userInfo.photos.length}}</view>
-      <view>
-        <view
-          wx:for="{{userInfo.photos}}"
-          wx:key="_id"
-          class="item ta-image {{index === 0 ? 'first' : ''}} {{item.loaded ? 'ta-loaded' : ''}}"
-        >
-          <image
-            src="{{'http://typha.samuraime.com:3000/static/images/demo' + (index % 3) + '.jpg'}}"
-            mode="aspectFill"
-            bindload="hidePhotoMask"
-            data-index="{{index}}"
-          />
-        </view>
+      <view
+        wx:for="{{userInfo.photos}}"
+        wx:key="_id"
+        class="item ta-image {{index === 0 ? 'first' : ''}} {{item.loaded ? 'ta-loaded' : ''}}"
+        bindtap="handlePreview"
+        data-url="{{item.url}}"
+      >
+        <image
+          src="{{item.url}}"
+          mode="aspectFill"
+          bindload="hidePhotoMask"
+          data-index="{{index}}"
+        />
       </view>
     </view>
   </view>

@@ -9,7 +9,7 @@
     <text wx:if="{{album.title}}" class="title">{{album.title}}</text>
     <navigator url="{{'/pages/albums/index?id=' + album._id}}">
       <image
-        src="{{'http://typha.samuraime.com:3000/static/images/demo' + (index % 3) + '.jpg'}}"
+        src="{{album.cover}}"
         mode="aspectFill"
       />
     </navigator>

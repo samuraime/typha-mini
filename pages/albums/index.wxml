@@ -8,7 +8,7 @@
   <view />
   <view wx:for="{{photos}}" wx:key="_id" wx:for-item="photo" class="photo-container">
     <image
-      src="{{'http://typha.samuraime.com:3000/static/images/demo' + (index % 3) + '.jpg'}}"
+      src="{{photo.url}}"
       mode="aspectFill"
       data-index="{{index}}"
       class="photo"

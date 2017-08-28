@@ -27,4 +27,11 @@ Page({
   hidePhotoMask(e) {
     return this.hideImageMask('photos')(e);
   },
+  handlePreview(e) {
+    const { url } = e.target.dataset;
+    wx.previewImage({
+      current: url,
+      urls: this.data.userInfo.photos.map(_ => _.url),
+    });
+  },
 });
