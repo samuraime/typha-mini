@@ -1,6 +1,5 @@
 const token = require('./token');
-
-const baseURL = 'http://typha.samuraime.com:3000';
+const { URL: baseURL } = require('../config');
 
 const methods = ['get', 'post', 'put', 'delete'];
 

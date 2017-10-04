@@ -1,10 +1,4 @@
-<scroll-view
-  scroll-y
-  enable-back-to-top
-  bindscrolltolower="loadNext"
-  bindscroll="handleScroll"
-  class="ta-container"
->
+<view class="ta-container">
   <view />
   <view wx:for="{{photos}}" wx:key="_id" wx:for-item="photo" class="photo-container">
     <image
@@ -21,4 +15,4 @@
       <view wx:else class="fa fa-fw fa-heart-o star" catchtap="handleStar" data-index="{{index}}" data-id="{{photo._id}}" data-starred="{{photo.starred}}" />
     </view>
   </view>
-</scroll-view>
+</view>

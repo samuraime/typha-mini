@@ -4,7 +4,7 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="main">
-    <navigator url="/pages/albums/albums" class="explore">Explore</navigator>
+    <navigator url="/pages/albums/albums" hover-class="none" class="explore">Explore</navigator>
     <view wx:if="{{userInfo.albums.length}}" class="albums-container">
       <view class="title">Albums {{userInfo.albums.length}}</view>
       <view>

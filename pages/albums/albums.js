@@ -12,6 +12,7 @@ const scrollPage = scroll({
         title: 'Explore',
       });
       this.loadNext();
+      console.log(this)
     },
     // star/unstar
     handleStar(e) {
